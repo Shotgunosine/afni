@@ -1,4 +1,4 @@
-from .utils import misc
+from afni_test_utils import misc
 from pathlib import Path
 import pytest
 
@@ -34,7 +34,7 @@ def test_suma(data):
     cmd = """
     set -e;
     export SUMA_DriveSumaMaxWait=5;
-    xvfb-run suma -niml &
+    suma -niml &
     sleep 3;
     DriveSuma -echo_edu   \
       -com show_surf -surf_label {data.cubo_curv_niml_dset} \
